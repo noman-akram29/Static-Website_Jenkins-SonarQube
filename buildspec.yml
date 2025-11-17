@@ -1,0 +1,18 @@
+version: 0.1
+
+phases:
+  install: 
+    commands:
+      - echo Installation for NGINX Web Server started
+      - sudo apt-get update
+      - sudo apt-get install nginx -y
+    build:
+      commands:
+        - echo Build for DevOps-Website-Repository started
+        - cp /* /var/www/html
+    post_build:
+      commands:
+        - echo Nginx Configuration
+artifacts:
+  files:
+    - '**/*'
